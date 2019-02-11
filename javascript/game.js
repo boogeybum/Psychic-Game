@@ -4,8 +4,8 @@ var compChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "
 // Game play variables start values
 var wins = 0;
 var losses = 0;
-var guesses = 5;
-var guessesLeft = 5;
+var guesses = 10;
+var guessesLeft = 10;
 var guessedLetters = [];
 var compGuess = null;
 
@@ -30,8 +30,8 @@ function updateGuessesSoFar() {
 
 //Reset at the end of a round
 var reset = function() {
-    totalGuesses = 5;
-    guessesLeft = 5;
+    totalGuesses = 10;
+    guessesLeft = 10;
     guessedLetters = [];
 
     updatecompGuess();
@@ -54,7 +54,7 @@ document.onkeyup = function(event) {
         alert("That is not a valid guess. Pick a letter from the alphabet.");
         return false;
 
-    //
+    //evaluate player input and determine guesses left, wins and losses
     } else if (check === true) {
         guessesLeft--;
         guessedLetters.push(playerGuess);
